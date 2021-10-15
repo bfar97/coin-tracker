@@ -19,7 +19,9 @@ const News = ({ simplified }) => {
         count: simplified ? 6 : 12 
     })
 
-    if(!cryptoNews?.value) return "Loading ... "
+
+
+    if(!cryptoNews?.value || isFetching) return "Loading ... "
 
     return (
         <Row gutter={[24, 24]}>
