@@ -2,6 +2,7 @@ import React from 'react'
 import HTMLReactParser from 'html-react-parser'
 import { Row, Col, Collapse, Typography, Avatar} from 'antd'
 import millify from 'millify'
+import { Loader } from '../components'
 
 import { useGetExchangesQuery } from '../services/cryptoApi'
 
@@ -13,7 +14,7 @@ const Exchanges = () => {
 
     const {data, isFetching } = useGetExchangesQuery()
 
-    if(isFetching) return "Loading ..."
+    if(isFetching) return <Loader />
     
     const exchanges = data?.data?.exchanges
     console.log(exchanges)
